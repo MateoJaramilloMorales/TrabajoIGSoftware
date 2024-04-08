@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EASY PARK - Login</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #007bff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 100px; /* Ancho del logo, ajusta según necesites */
+    margin-bottom: 20px;
+  }
+  label {
+    font-weight: bold;
+  }
+  .form-control {
+    margin-bottom: 15px;
+  }
+  input[type="text"],
+  input[type="password"],
+  button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #2980b9;
+  }
+  .register-link {
+    text-align: center;
+    margin-top: 15px;
+  }
+  .register-link a {
+    color: #3498db;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1><img src="ruta_del_logo.png" alt="Logo"></h1> <!-- Agregado el logo -->
+  <h1>EASY PARK</h1> <!-- Agregado el título -->
+  <form id="loginForm" class="form" action="pagina.html">
+    <h2>Login</h2>
+    <div class="form-control">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username" required>
+    </div>
+    <div class="form-control">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+    </div>
+    <button type="submit">Login</button>
+    <button type="button" onclick="loginAsAdmin()">Login as Admin</button>
+  </form>
+  <div class="register-link">
+    Don't have an account? <a href="register.html">Register here</a> or <a href="Registeradmin.html">Register as Admin</a>
+  </div>
+</div>
+<script>
+  function loginAsAdmin() {
+    window.location.href = "PaginaAdmin.html";
+  }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

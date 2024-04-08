@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASY PARK</title>
+    <!-- Font Awesome para los iconos de redes sociales y perfil -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Estilos para el cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        /* Estilos para el logo */
+        .logo img {
+            max-width: 200px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        /* Estilos para el título */
+        h1 {
+            margin: 10px 0;
+            font-size: 2em;
+            transition: color 0.3s;
+        }
+
+        /* Estilos para el subtítulo */
+        h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        /* Estilos para la barra de navegación */
+        nav {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        /* Estilos para los enlaces de navegación */
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para el contenedor principal */
+        .container {
+            max-width: 900px; /* Aumentado el ancho */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative; /* Importante para posicionar correctamente el perfil */
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Distribuye los elementos uniformemente */
+        }
+
+        /* Estilos para las pestañas */
+        .tab {
+            display: none;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s;
+            flex: 1 1 45%; /* Ajusta el tamaño de las pestañas */
+            margin: 10px;
+        }
+
+        .tab.active {
+            display: block;
+        }
+
+        /* Estilos para los botones */
+        button {
+            padding: 10px 20px; /* Aumento del padding */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px; /* Aumento del espacio superior */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para los parqueaderos */
+        .parqueadero {
+            margin-bottom: 20px;
+            padding: 20px; /* Aumento del padding */
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .parqueadero h3 {
+            margin: 0;
+        }
+
+        .parqueadero p {
+            margin: 5px 0;
+        }
+
+        /* Estilos para las imágenes de parqueaderos */
+        .parqueadero img {
+            max-width: 120px; /* Aumento del tamaño máximo */
+            height: auto;
+            margin-right: 20px; /* Aumento del margen derecho */
+            border-radius: 5px;
+        }
+
+        /* Estilos para el mapa */
+        #map {
+            height: 300px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            width: 100%; /* Ajusta el ancho del mapa al 100% */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="ruta-al-logo.png" alt="Logo"></div>
+        <h1>EASY PARK</h1>
+        <h2>Interfaz Administrador Parqueadero</h2>
+    </header>
+
+    <nav>
+        <a href="#" class="tab-link" data-tab="tab6">Mi Cuenta</a> <!-- Pestaña principal -->
+        <a href="#" class="tab-link" data-tab="tab4">Mis Parqueaderos</a>
+        <a href="#" class="tab-link" data-tab="tab5">Mapa</a>
+        <a href="#" class="tab-link" data-tab="tab3">Información de Suscripciones</a>
+        <a href="#" class="tab-link" data-tab="tab2">Contacto</a>
+
+    </nav>
+
+    <div class="container">
+
+        <div id="tab6" class="tab active">
+            <h2>Mi Cuenta</h2>
+            <p>Información de tu cuenta:</p>
+            <ul>
+                <li>Nombre: {{vars.nombre}}</li>
+                <li>Correo electrónico: {{vars.email}}</li>
+                <li>Tipo de membresía: Premium</li>
+                <li>Fecha de registro: 01/01/2023</li>
+                <li>Último acceso: 04/07/2024</li>
+                <!-- Puedes agregar más información aquí -->
+            </ul>
+            <button onclick="cerrarSesion()">Cerrar Sesión</button>
+        </div>
+
+        <div id="tab4" class="tab">
+            <h2>Mis Parqueaderos</h2>
+            <p>Aquí puedes ver la lista de tus parqueaderos:</p>
+            <div class="parqueaderos">
+                <div class="parqueadero">
+                    <img src="ruta-a-imagen-parqueadero1.jpg" alt="Parqueadero 1">
+                    <div>
+                        <h3>Parqueadero 1</h3>
+                        <p>Dirección: Calle 123</p>
+                        <p>Celdas: 50</p>
+                        <p>Horario: 24 horas</p>
+                        <p>Tarifa: $2/hora</p>
+                        <p>Tipo de vehículo: 
+                            <select>
+                                <option value="carro">Carro</option>
+                                <option value="moto">Moto</option>
+                            </select>
+                        </p>
+                        <button onclick="verEstadoParqueadero(1)">Ver Estado</button>
+                    </div>
+                </div>
+                <div class="parqueadero">
+                    <img src="ruta-a-imagen-parqueadero2.jpg" alt="Parqueadero 2">
+                    <div>
+                        <h3>Parqueadero 2</h3>
+                        <p>Dirección: Avenida 456</p>
+                        <p>Celdas: 30</p>
+                        <p>Horario: 6am - 10pm</p>
+                        <p>Tarifa: $1.5/hora</p>
+                        <p>Tipo de vehículo: 
+                            <select>
+                                <option value="carro">Carro</option>
+                                <option value="moto">Moto</option>
+                            </select>
+                        </p>
+                        <button onclick="verEstadoParqueadero(2)">Ver Estado</button>
+                    </div>
+                </div>
+                <!-- Puedes agregar más elementos aquí -->
+            </div>
+            <button onclick="registrarParqueadero()">Registrar Parqueadero</button>
+        </div>
+
+        <div id="tab3" class="tab">
+            <h2>Información de Suscripciones</h2>
+            <p>Aquí puedes ver la información de tus suscripciones:</p>
+            <ul>
+                <li>Clientes con suscripciones en tus parqueaderos: 15</li>
+                <li>Duración promedio de la suscripción: 3 meses</li>
+                <li>Tipo de suscripción más común: Mensual</li>
+                <!-- Puedes agregar más información aquí -->
+            </ul>
+            <button onclick="mostrarDetallesSuscripciones()">Mas detalles</button>
+        </div>
+
+        <div id="tab2" class="tab">
+            <h2>Contacto</h2>
+            <p>Puedes contactarnos a través de:</p>
+            <ul>
+                <li>Teléfono: 123456789</li>
+                <li>Correo electrónico: info@example.com</li>
+                <li>Dirección: Calle 123, Medellín, Colombia</li>
+            </ul>
+        </div>
+
+        <div id="tab5" class="tab">
+            <h2>Mapa de Parqueaderos</h2>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script>
+        function cerrarSesion() {
+            window.location.href = "login.html";
+        }
+
+        function verEstadoParqueadero(parqueaderoId) {
+            // Aquí puedes escribir el código para mostrar el estado del parqueadero con el ID proporcionado
+            alert("Estado del parqueadero " + parqueaderoId);
+        }
+
+        function mostrarDetallesSuscripciones() {
+            // Aquí puedes escribir el código para mostrar más detalles de las suscripciones
+            alert("Mostrar más detalles de las suscripciones");
+        }
+
+        function registrarParqueadero() {
+            window.location.href = "RegisParqueaderos.html";
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var tabLinks = document.querySelectorAll(".tab-link");
+            var tabs = document.querySelectorAll(".tab");
+
+            tabLinks.forEach(function(link) {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    var tabId = this.getAttribute("data-tab");
+
+                    tabs.forEach(function(tab) {
+                        tab.classList.remove("active");
+                    });
+
+                    document.getElementById(tabId).classList.add("active");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

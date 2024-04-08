@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Parqueadero</title>
+    <style>
+        /* Estilos para el formulario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #007bff;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"],
+        .regresar {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 20px auto 0;
+            width: fit-content;
+        }
+
+        input[type="submit"]:hover,
+        .regresar:hover {
+            background-color: #0056b3;
+        }
+
+        .regresar i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registro de Parqueadero</h2>
+    <form id="registroParqueaderoForm">
+        <label for="nombre">Nombre del Parqueadero:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+        <label for="celdas">Cantidad de Celdas:</label>
+        <input type="number" id="celdas" name="celdas" min="1" required>
+
+        <label for="horario">Horario:</label>
+        <input type="text" id="horario" name="horario" required>
+
+        <label for="tarifa">Tarifa por Hora:</label>
+        <input type="text" id="tarifa" name="tarifa" required>
+
+        <label for="tipo_vehiculo">Tipo de Vehículo:</label>
+        <select id="tipo_vehiculo" name="tipo_vehiculo" required>
+            <option value="carro">Carro</option>
+            <option value="moto">Moto</option>
+        </select>
+
+        <input type="submit" value="Registrar Parqueadero">
+    </form>
+
+    <button class="regresar" onclick="window.location.href = 'PaginaAdmin.html';"><i class="fas fa-arrow-left"></i>Regresar</button>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
+
+
+
+

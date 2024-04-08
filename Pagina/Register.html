@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EASY PARK - Register</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #007bff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  label {
+    font-weight: bold;
+  }
+  .form-control {
+    margin-bottom: 15px;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="checkbox"],
+  button,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #2980b9;
+  }
+  .login-link {
+    text-align: center;
+    margin-top: 15px;
+  }
+  .login-link a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  .back-button {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .back-button a {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+  }
+  .back-button a:hover {
+    background-color: #2980b9;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <form id="registerForm" class="form" onsubmit="return redirectToLogin()">
+    <h2>Create an Account</h2>
+    <div class="form-control">
+      <label for="newUsername">Username</label>
+      <input type="text" id="newUsername" placeholder="Enter your new username" required>
+    </div>
+    <div class="form-control">
+      <label for="newPassword">Password</label>
+      <input type="password" id="newPassword" placeholder="Enter your new password" required>
+    </div>
+    <div class="form-control">
+      <label for="cedula">Cedula</label>
+      <input type="text" id="cedula" placeholder="Enter your cedula" required>
+    </div>
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-control">
+      <label for="confirmEmail">Confirm Email</label>
+      <input type="email" id="confirmEmail" placeholder="Confirm your email" required>
+    </div>
+    <div class="form-control">
+      <label>
+        <input type="checkbox" id="terms" required>
+        I accept the <a href="terms.html" target="_blank">terms and conditions</a>
+      </label>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+  <div class="back-button">
+    <a href="Login.html">← Back to Login</a>
+  </div>
+</div>
+<script>
+  function redirectToLogin() {
+    window.location.href = "Login.html";
+    return false; // Prevent form submission
+  }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
